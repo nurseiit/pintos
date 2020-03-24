@@ -32,7 +32,7 @@ RUN echo 'deb-src http://snapshot.debian.org/archive/debian/20070730T000000Z/ le
 RUN echo 'deb     http://snapshot.debian.org/archive/debian-security/20070730T000000Z/ lenny/updates main' >> /etc/apt/sources.list
 RUN echo 'deb-src http://snapshot.debian.org/archive/debian-security/20070730T000000Z/ lenny/updates main' >> /etc/apt/sources.list
 
-# Install tools and programs
+# Install older gcc/g++ versions for bochs
 RUN apt-get update && apt-get install -y --allow-unauthenticated \
       gcc-3.4 g++-3.4 gcc-4.2 \
       && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-3.4 20 \
