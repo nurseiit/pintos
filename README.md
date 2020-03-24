@@ -2,6 +2,9 @@
 
 👾 + 🐋 = ❤️ Dockerized Pintos of CS140 by Stanford.
 
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/nurseiit/pintos)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/nurseiit/pintos/latest)
+
 Run and check your pintos code inside a `docker` container.
 
 ## Pull the image
