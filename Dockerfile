@@ -58,6 +58,16 @@ RUN env SRCDIR=/tmp PINTOSDIR=/pintos/ DSTDIR=/usr/local/ \
       sh /pintos/src/misc/bochs-2.2.6-build.sh \
       rm bochs-2.2.6.tar.gz
 
+# Link qemu executable
+RUN ln -s /usr/bin/qemu-system-i386 /usr/bin/qemu
+
+# For the qemu simulator to work as intended,
+# one needs to do the following to fix an ACPI bug
+# as described here under "Troubleshooting":
+# http://arpith.xyz/2016/01/getting-started-with-pintos/
+#
+# $ sed -i '/serial_flush ();/a outw( 0x604, 0x0 | 0x2000 );' /pintos/src/devices/shutdown.c
+
 # Add Pintos to PATH
 ENV PATH=/pintos/src/utils:$PATH
 

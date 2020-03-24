@@ -30,6 +30,19 @@ $ docker ps -a            # list all processes
 $ docker rm 5e22515a0f51  # remove container
 ```
 
+## Gotchas
+
+### Using `qemu` simulator
+For the `qemu` simulator to work as intended, one needs to do the
+following to fix an ACPI bug as described
+[here](http://arpith.xyz/2016/01/getting-started-with-pintos/)
+under "Troubleshooting". 
+
+```
+$ sed -i '/serial_flush ();/a outw( 0x604, 0x0 | 0x2000 );' /pintos/src/devices/shutdown.c
+```
+
 ## To Do
 * [x] Use volumes
-* [ ] Configure `qemu` simulator
+* [x] Configure `qemu` simulator (partially)
+* [ ] Make `qemu` work out of the box
