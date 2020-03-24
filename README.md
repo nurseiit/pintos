@@ -10,11 +10,15 @@ Run and check your pintos code inside a `docker` container.
 $ docker pull nurseiit/pintos:latest
 ```
 
-## Running
+## Run and mount the volume
 
 ```
-$ docker run -it nurseiit/pintos:latest
+$ docker run -it --volume $PWD/project1:/pintos nurseiit/pintos:latest
 ```
+
+> Please note that the directory format is `--volume <local dir>:/<mount dir in docker>`.
+
+> Make sure that the directory you are mounting contains `/src` as a first child. Otherwise it will conflict with `PATH` variables.
 
 ## Stopping
 
@@ -24,5 +28,5 @@ $ docker rm 5e22515a0f51  # remove container
 ```
 
 ## To Do
-* [ ] Use volumes
+* [x] Use volumes
 * [ ] Configure `qemu` simulator
