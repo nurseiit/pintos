@@ -7,13 +7,13 @@ Run and check your pintos code inside a `docker` container.
 ## Pull the image
 
 ```
-$ docker pull nurseiit/pintos:1.0
+$ docker pull nurseiit/pintos:latest
 ```
 
 ## Running
 
 ```
-$ docker run -it nurseiit/pintos:1.0
+$ docker run -it nurseiit/pintos:latest
 ```
 
 ## Stopping
